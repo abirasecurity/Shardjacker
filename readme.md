@@ -30,56 +30,56 @@ A comprehensive Elasticsearch security assessment framework that performs reconn
   - requests
   - urllib3
 
-## Installation
+# Installation
 
-# Clone or download the script
+### Clone or download the script
 
 wget <https://example.com/shardjacker.py>
 chmod +x shardjacker.py
 
-# Install required dependencies
+### Install required dependencies
 
 pip3 install requests urllib3
 
 ## Usage
 
-# Basic Usage
+### Basic Usage
 
-# Simple write test for penetration testing reports
+### Simple write test for penetration testing reports
 
 python3 shardjacker.py -f targets.txt --write-test-only --csv-output pentest_results
 
-# Basic reconnaissance mode
+### Basic reconnaissance mode
 
 python3 shardjacker.py -f targets.txt --recon-only
 
-# Standard write permission testing
+### Standard write permission testing
 
 python3 shardjacker.py -f targets.txt
 
-# Full exploitation testing
+### Full exploitation testing
 
 python3 shardjacker.py -f targets.txt --exploit-confirm
 
-# Advanced Usage Examples
+## Advanced Usage Examples
 
-# Comprehensive write test with no index limit (for complete client reports)
+### Comprehensive write test with no index limit (for complete client reports)
 
 python3 shardjacker.py -f targets.txt --write-test-only --no-index-limit --csv-output client_report
 
-# Silent mode for automated reporting
+### Silent mode for automated reporting
 
 python3 shardjacker.py -f targets.txt --write-test-only --no-console --csv-output automated_scan
 
-# Authenticated scanning with custom thread count
+#### Authenticated scanning with custom thread count
 
 python3 shardjacker.py -f targets.txt -u elastic -p changeme --threads 8 --timeout 20
 
-# Selective exploitation testing
+### Selective exploitation testing
 
 python3 shardjacker.py -f targets.txt --exploit-confirm --exploit-types injection modification deletion
 
-# Performance-optimized scan for large deployments
+### Performance-optimized scan for large deployments
 
 python3 shardjacker.py -f targets.txt --max-indices 100 --threads 10 --timeout 30
 
@@ -144,9 +144,9 @@ Real-time progress tracking with color-coded status indicators:
 - 🔐 Authentication required
   JSON Output
 
-## Structured output with scan metadata
+# Structured output with scan metadata
 
-# JSON
+### JSON
 
 {
   "scan_metadata": {
@@ -164,7 +164,7 @@ Real-time progress tracking with color-coded status indicators:
   ]
 }
 
-# CSV Output
+### CSV Output
 
 Multiple CSV files are generated:
 
