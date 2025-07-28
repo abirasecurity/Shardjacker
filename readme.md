@@ -1,5 +1,7 @@
 # ShardJacker - Elasticsearch Advanced Scanner & Exploitation Tool
 
+![Alt text](image.png)
+
 A comprehensive Elasticsearch security assessment framework that performs reconnaissance through full exploitation testing. This tool supports multiple operational modes from passive discovery to active exploitation validation, making it suitable for both penetration testing reports and comprehensive security audits.
 
 ## Features
