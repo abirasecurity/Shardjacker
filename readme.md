@@ -47,50 +47,50 @@ pip3 install requests urllib3
 
 ### Simple write test for penetration testing reports
 
-python3 shardjacker.py -f targets.txt --write-test-only --csv-output pentest_results
+    python3 shardjacker.py -f targets.txt --write-test-only --csv-output pentest_results
 
 ### Basic reconnaissance mode
 
-python3 shardjacker.py -f targets.txt --recon-only
+    python3 shardjacker.py -f targets.txt --recon-only
 
 ### Standard write permission testing
 
-python3 shardjacker.py -f targets.txt
+    python3 shardjacker.py -f targets.txt
 
 ### Full exploitation testing
 
-python3 shardjacker.py -f targets.txt --exploit-confirm
+    python3 shardjacker.py -f targets.txt --exploit-confirm
 
 ## Advanced Usage Examples
 
 ### Comprehensive write test with no index limit (for complete client reports)
 
-python3 shardjacker.py -f targets.txt --write-test-only --no-index-limit --csv-output client_report
+    python3 shardjacker.py -f targets.txt --write-test-only --no-index-limit --csv-output client_report
 
 ### Silent mode for automated reporting
 
-python3 shardjacker.py -f targets.txt --write-test-only --no-console --csv-output automated_scan
+    python3 shardjacker.py -f targets.txt --write-test-only --no-console --csv-output automated_scan
 
 #### Authenticated scanning with custom thread count
 
-python3 shardjacker.py -f targets.txt -u elastic -p changeme --threads 8 --timeout 20
+    python3 shardjacker.py -f targets.txt -u elastic -p changeme --threads 8 --timeout 20
 
 ### Selective exploitation testing
 
-python3 shardjacker.py -f targets.txt --exploit-confirm --exploit-types injection modification deletion
+    python3 shardjacker.py -f targets.txt --exploit-confirm --exploit-types injection modification deletion
 
 ### Performance-optimized scan for large deployments
 
-python3 shardjacker.py -f targets.txt --max-indices 100 --threads 10 --timeout 30
+    python3 shardjacker.py -f targets.txt --max-indices 100 --threads 10 --timeout 30
 
 ## Configuration
 
 Target File Format
 
 Create a text file with one target per line in IP:PORT format:
-192.168.1.100:9200
-10.0.0.50:9200
-elasticsearch.example.com:9200
+    192.168.1.100:9200
+    10.0.0.50:9200
+    elasticsearch.example.com:9200
 
 ## Command Line Options
 
@@ -132,37 +132,39 @@ Processing Options
 
     --dedupe: Remove duplicate target+index combinations from results
 
-Output
+# Output
+
 Console Output
 
 Real-time progress tracking with color-coded status indicators:
 
-- ✅ Successful operations
-- ❌ Errors and failures
-- 🔍 Discovery operations
-- 💥 Exploitation confirmations
-- 🔐 Authentication required
-  JSON Output
+    - ✅ Successful operations
+    - ❌ Errors and failures
+    - 🔍 Discovery operations
+    - 💥 Exploitation confirmations
+    - 🔐 Authentication required
 
-# Structured output with scan metadata
+# JSON Output
+
+## Structured output with scan metadata
 
 ### JSON
 
-{
-  "scan_metadata": {
-    "tool": "Elasticsearch Advanced Scanner & Exploitation Tool",
-    "version": "2.0",
-    "total_results": 150
-  },
-  "results": [
     {
-      "target": "https://192.168.1.100:9200",
-      "index": "user_data",
-      "status": "writable",
-      "method": "write_test"
+      "scan_metadata": {
+        "tool": "Elasticsearch Advanced Scanner & Exploitation Tool",
+        "version": "2.0",
+        "total_results": 150
+      },
+      "results": [
+        {
+          "target": "https://192.168.1.100:9200",
+          "index": "user_data",
+          "status": "writable",
+          "method": "write_test"
+        }
+      ]
     }
-  ]
-}
 
 ### CSV Output
 
